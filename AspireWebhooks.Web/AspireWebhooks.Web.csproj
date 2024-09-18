@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AspireSample.ServiceDefaults\AspireSample.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\AspireWebhooks.ServiceDefaults\AspireWebhooks.ServiceDefaults.csproj" />
   </ItemGroup>
 
   <ItemGroup>

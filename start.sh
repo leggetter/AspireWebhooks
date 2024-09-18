@@ -1,1 +1,1 @@
-dotnet run --project AspireSample.AppHost
+dotnet run --project AspireWebhooks.AppHost

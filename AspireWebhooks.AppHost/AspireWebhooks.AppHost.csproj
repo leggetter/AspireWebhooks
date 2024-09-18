@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AspireSample.ApiService\AspireSample.ApiService.csproj" />
-    <ProjectReference Include="..\AspireSample.Web\AspireSample.Web.csproj" />
+    <ProjectReference Include="..\AspireWebhooks.ApiService\AspireWebhooks.ApiService.csproj" />
+    <ProjectReference Include="..\AspireWebhooks.Web\AspireWebhooks.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>
