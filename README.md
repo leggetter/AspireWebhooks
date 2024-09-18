@@ -15,7 +15,7 @@ This project demonstrates how to implement and handle webhooks using [.NET Aspir
 
 ## Introduction
 
-[Webhooks](https://hookdeck.com/webhooks/guides/what-are-webhooks-how-they-work) are a way for web services to communicate with each other by sending data to a specified URL. This is most commonly an HTTP POST request.
+[Webhooks](https://hookdeck.com/webhooks/guides/what-are-webhooks-how-they-work?ref=github-aspire-webhooks) are a way for web services to communicate with each other by sending data to a specified URL. This is most commonly an HTTP POST request.
 
 This project provides a sample receiving webhooks using .NET Aspire. Using [Hookdeck](https://hookdeck.com?ref=github-aspire-webhooks) with a .NET Aspire application gives you full observability of both internal services via Aspire and communication with external service via Hookdeck.
 
