@@ -36,6 +36,7 @@ To get started with this project, follow the instructions below.
 ### Prerequisites
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- [The Hookdeck CLI](https://hookdeck.com/docs/cli?ref=github-aspire-webhooks) for receiving webhooks on the localhost
 
 ### Installation
 
