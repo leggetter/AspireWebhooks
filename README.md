@@ -6,6 +6,7 @@ This project demonstrates how to implement and handle webhooks using [.NET Aspir
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -18,15 +19,15 @@ This project demonstrates how to implement and handle webhooks using [.NET Aspir
 
 This project provides a sample receiving webhooks using .NET Aspire. Using [Hookdeck](https://hookdeck.com?ref=github-aspire-webhooks) with a .NET Aspire application gives you full observability of both internal services via Aspire and communication with external service via Hookdeck.
 
-## Project Structure
-
-🚧 Coming soon...
-
 ## Features
 
 - Receive and process webhook events
 - Validate webhook payloads (🚧 Coming soon...)
 - Log webhook events
+
+## Project Structure
+
+🚧 Coming soon...
 
 ## Getting Started
 
