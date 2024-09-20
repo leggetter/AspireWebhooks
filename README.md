@@ -53,6 +53,14 @@ To get started with this project, follow the instructions below.
   cd AspireWebhook
   ```
 
+## Configuration
+
+```sh
+dotnet user-secrets init --project "./AspireWebhooks/AspireWebhooks.WebhooksService"
+dotnet user-secrets set "AspireWebhooks:HookdeckWebhookSecret" "YOUR-WEBHOOK-SECRET" \
+  --project "./AspireWebhooks/AspireWebhooks.WebhooksService"
+```
+
 ## Usage
 
 1. Build and run the project:
