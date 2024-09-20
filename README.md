@@ -27,7 +27,11 @@ This project provides a sample receiving webhooks using .NET Aspire. Using [Hook
 
 ## Project Structure
 
-🚧 Coming soon...
+- **Web**: Web frontend
+- **ApiService**: Internal API
+- **WebhooksService**: Receive external webhooks
+- **ServiceDefault**
+- **AppHost**
 
 ## Getting Started
 

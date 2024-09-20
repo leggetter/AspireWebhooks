@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AspireWebhooks.ApiService\AspireWebhooks.ApiService.csproj" />
     <ProjectReference Include="..\AspireWebhooks.Web\AspireWebhooks.Web.csproj" />
+    <ProjectReference Include="..\AspireWebhooks.WebhooksService\AspireWebhooks.WebhooksService.csproj" />
   </ItemGroup>
 
   <ItemGroup>
