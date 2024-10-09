@@ -22,7 +22,7 @@ This project provides a sample receiving webhooks using .NET Aspire. Using [Hook
 ## Features
 
 - Receive and process webhook events
-- Validate webhook payloads (🚧 Coming soon...)
+- Validate webhook payloads
 - Log webhook events
 
 ## Project Structure
@@ -41,6 +41,7 @@ To get started with this project, follow the instructions below.
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 - [The Hookdeck CLI](https://hookdeck.com/docs/cli?ref=github-aspire-webhooks) for receiving webhooks on the localhost
+- A [free Hookdeck account](https://dashboard.hookdeck.com/signup?ref=github-aspire-webhooks) to be able to verify the webhooks
 
 ### Installation
 
@@ -55,6 +56,8 @@ To get started with this project, follow the instructions below.
 
 ## Configuration
 
+Get your webhook signing secret from the [Hookdeck dashboard](https://dashboard.hookdeck.com) -> **Settings** -> **Secrets** and store the value in a [secret storage](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-8.0&tabs=linux#enable-secret-storage).
+
 ```sh
 dotnet user-secrets init --project "./AspireWebhooks/AspireWebhooks.WebhooksService"
 dotnet user-secrets set "AspireWebhooks:HookdeckWebhookSecret" "YOUR-WEBHOOK-SECRET" \
@@ -67,8 +70,39 @@ dotnet user-secrets set "AspireWebhooks:HookdeckWebhookSecret" "YOUR-WEBHOOK-SEC
   ```sh
   ./start.sh
   ```
+2. Create a localtunnel using the Hookdeck CLI:
+  ```sh
+  hookdeck listen 5520 weather-webhook --path /webhooks/weather
+  ```
 
-🚧 More information coming soon...
+  This creates a [Hookdeck Source](https://hookdeck.com/docs/sources?ref=github-aspire-webhooks) that forwards any requests to the CLI with the path `/webhooks/weather`.
+3. Copy the `weather-webhook` Source URL from the CLI output:
+  ```
+  Dashboard
+  👉 Inspect and replay events: https://dashboard.hookdeck.com?team_id=tm_{id}
+
+  Sources
+  🔌 weather-webhook URL: https://hkdk.events/{id}
+
+  Connections
+  weather-webhook -> weather-webhook_to_cli-weather-webhook forwarding to /webhooks/weather
+
+  > Ready! (^C to quit)
+  ```
+4. Test the receipt of a webhook with a cURL request:
+  ```sh
+  curl --location 'https://hkdk.events/{id}' \
+    --header 'Content-Type: application/json' \
+    --data '[{"Date":"2024-09-18","TemperatureC":47,"Summary":"Cool","TemperatureF":116},{"Date":"2024-09-19","TemperatureC":37,"Summary":"Chilly","TemperatureF":98},{"Date":"2024-09-20","TemperatureC":13,"Summary":"Sweltering","TemperatureF":55},{"Date":"2024-09-21","TemperatureC":40,"Summary":"Chilly","TemperatureF":103},{"Date":"2024-09-22","TemperatureC":-7,"Summary":"Cool","TemperatureF":20}]'
+  ```
+5. Check the **webhooksservice** Console logs within the .NET Aspire dashboard. You'll see something similar to the following:
+  ```
+  2024-10-09T13:58:41.9360000 Webhook originated from Hookdeck
+  2024-10-09T13:58:41.9610000 Received JSON: WeatherForecast { Date = 9/18/2024, TemperatureC = 47, Summary = Cool, TemperatureF = 116 }
+  2024-10-09T13:58:41.9760000 Stored forecast in cache
+  ```
+
+See [next steps](next-steps.md) for the general instructions for deploying to Azure.
 
 ## Contributing
 
