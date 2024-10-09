@@ -22,7 +22,7 @@ This project provides a sample receiving webhooks using .NET Aspire. Using [Hook
 ## Features
 
 - Receive and process webhook events
-- Validate webhook payloads (🚧 Coming soon...)
+- Validate webhook payloads
 - Log webhook events
 
 ## Project Structure
